@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 import pickle
 import pandas as pd
@@ -27,9 +25,10 @@ def recommend(movie):
 
 
 
-movies1_dic=pickle.load(open('movies1_dic.pkl','rb'))
+movies1_dic = pickle.load(open("movies1_dic.pkl", "rb"))
 
-movies = pd.DataFrame(movies1_dic)
+
+movies = pd.DataFrame(movies1_dic())
 
 similarity=pickle.load(open('similarity.pkl','rb'))
 
@@ -44,10 +43,11 @@ movies['title'].values
 st.write(movies1_dic)
 
 # Create DataFrames
-movies = pd.DataFrame(movies1_dic)
+movies = pd.DataFrame(movies1_dic())
 st.write(movies)
 
 if st.button('Recommend'): 
+    print(selected_movies_name)
     names,posters=recommend(selected_movies_name )
     col1,col2,col3,col4,col5=st.beta_columns(5)
     with col1:
@@ -65,11 +65,3 @@ if st.button('Recommend'):
     with col5:
         st.text(names[4])
         st.image(posters[4])
-
-
-
-
-
-
-
-

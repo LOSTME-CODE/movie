@@ -225,7 +225,7 @@ import pickle
 
 pickle.dump(df,open('movies1.pkl','wb'))
 df['title'].values
-s
+
 pickle.dump(df,open('movies1.pkl','wb'))
 
 pickle.dump(df,open('similarity.pkl','wb'))
