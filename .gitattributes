@@ -1,2 +1,0 @@
-tmdb_5000_credits.csv filter=lfs diff=lfs merge=lfs -text
-similarity.pkl filter=lfs diff=lfs merge=lfs -text
